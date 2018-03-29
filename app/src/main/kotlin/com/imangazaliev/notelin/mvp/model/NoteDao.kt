@@ -8,7 +8,7 @@ import java.util.*
 class NoteDao {
 
     fun createNote(): Note {
-        val note = Note("New note", Date())
+        val note = Note("", Date())
         note.save()
         return note
     }

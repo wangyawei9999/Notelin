@@ -52,6 +52,11 @@ class NoteActivity : MvpAppCompatActivity(), NoteView {
                 editText.setSelection((editText.text.length))
             }
         }
+
+        saved_btn.setOnClickListener {
+            presenter.saveNote(etTitle.text.toString(), etText.text.toString())
+            finish()
+        }
     }
 
     override fun showNote(note: Note) {
@@ -95,7 +100,7 @@ class NoteActivity : MvpAppCompatActivity(), NoteView {
     }
 
     override fun onNoteSaved() {
-        Toast.makeText(this, "Note saved", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "保存成功！", Toast.LENGTH_SHORT).show()
     }
 
     override fun onNoteDeleted() {
@@ -110,7 +115,10 @@ class NoteActivity : MvpAppCompatActivity(), NoteView {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.menuSaveNote -> presenter.saveNote(etTitle.text.toString(), etText.text.toString())
+            R.id.menuSaveNote -> {
+                presenter.saveNote(etTitle.text.toString(), etText.text.toString())
+                finish()
+            }
 
             R.id.menuDeleteNote -> presenter.showNoteDeleteDialog()
 

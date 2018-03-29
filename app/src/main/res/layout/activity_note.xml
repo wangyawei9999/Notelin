@@ -32,12 +32,23 @@
     <EditText
         android:id="@+id/etText"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="350dp"
         android:textColor="#000000"
         android:gravity="start"
         android:hint="@string/input_your_text"
         android:background="@null"
-        android:paddingLeft="10dp"
-        />
+        android:paddingLeft="10dp" />
+
+    <RelativeLayout
+        android:gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/saved_btn"
+            android:text="@string/save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
 
 </LinearLayout>
