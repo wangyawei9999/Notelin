@@ -37,6 +37,13 @@ class MainActivity : MvpAppCompatActivity(), MainView {
         }
 
         newNoteFab.setOnClickListener { presenter.openNewNote() }
+
+        home_page_btn.setOnClickListener {
+            Toast.makeText(this, "首页", Toast.LENGTH_LONG).show()
+        }
+        about_us_btn.setOnClickListener {
+            Toast.makeText(this, "我的", Toast.LENGTH_LONG).show()
+        }
     }
 
     override fun onNotesLoaded(notes: List<Note>) {
